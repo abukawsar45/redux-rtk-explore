@@ -1,7 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from './../App';
-import PostCard from '../component/PostCard';
 import Main from '../layout/Main';
+import Feed from '../pages/Feed';
+import SinglePostCard from '../component/singlePostCard/singlePostCard';
 
 const router = createBrowserRouter([
   {
@@ -11,8 +12,12 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <PostCard />,
+        element: <Feed />,
       },
+      {
+        path: '/posts/:id',
+        element: <SinglePostCard/>
+      }
     ],
   },
 ]);
